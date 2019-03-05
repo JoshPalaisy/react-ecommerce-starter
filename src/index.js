@@ -4,7 +4,7 @@ import './styles/index.css'
 import Routes from './config/routes'
 import * as serviceWorker from './serviceWorker'
 import { createStore, applyMiddleware, compose } from 'redux'
-import rootReducer from './store/reducers/rootReducer'
+import rootReducer from './data/reducers/rootReducer'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { reduxFirestore, getFirestore } from 'redux-firestore'
@@ -24,6 +24,6 @@ const store = createStore(rootReducer,
 );
 
 store.firebaseAuthIsReady.then(() => {
-  ReactDOM.render(<Provider store={store}><Routes /></Provider>, document.getElementById('root'))
+  ReactDOM.render(<Provider store={store}><Routes /></Provider>, document.getElementById('app'))
   serviceWorker.register();
 })
