@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
-import { signIn } from '../data/actions/authActions'
+import { Redirect, Link } from 'react-router-dom'
 import '../styles/login.css'
+import { signIn } from '../data/actions/authActions'
 
 class Login extends Component {
   state = {
@@ -19,6 +19,8 @@ class Login extends Component {
     this.props.signIn(this.state)
     this.props.history.push('/')
   }
+
+
   render() {
     const { authError, auth } = this.props
     if (auth.uid) return <Redirect to='/' />
@@ -41,10 +43,11 @@ class Login extends Component {
                 <div className="input-field">
                   <button className="btn teal lighten-1">Login</button>
                 </div>
-                <p className="red-text center">
-                  {authError ? { authError } : null}
-                </p>
               </form>
+              <p className="red-text center">
+                {authError ? { authError } : null}
+              </p>
+              <p className="grey-text center">Don't have an account? <Link to='/create-account' className="teal-text">Register</Link></p>
             </div>
             <div className="col s12 m3 l3"></div>
           </div>
@@ -54,16 +57,16 @@ class Login extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds)),
+  }
+}
+
 const mapStateToProps = (state) => {
   return {
     authError: state.auth.authError,
     auth: state.firebase.auth
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    signIn: (creds) => dispatch(signIn(creds))
   }
 }
 
