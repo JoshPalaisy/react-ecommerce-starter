@@ -1,4 +1,4 @@
-##React Redux Firebase Starter
+##React E-Commerce Starter Kit
 Ready to go React project with Firebase Auth & DB.
 
 ##Firebase Setup

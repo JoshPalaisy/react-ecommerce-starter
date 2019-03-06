@@ -14,12 +14,12 @@ export const signIn = (credentials) => {
   }
 }
 
-export const signOut = () => {
+export const logOut = () => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase()
 
     firebase.auth().signOut().then(() => {
-      dispatch({ type: 'SIGNOUT_SUCCESS' })
+      dispatch({ type: 'LOGOUT_SUCCESS' })
     })
   }
 }
@@ -39,9 +39,9 @@ export const register = (newUser) => {
         initials: newUser.firstName[0] + newUser.lastName[0]
       })
     }).then(() => {
-      dispatch({ type: 'SIGNUP_SUCCESS' })
+      dispatch({ type: 'REGISTER_SUCCESS' })
     }).catch(err => {
-      dispatch({ type: 'SIGNUP_ERROR', err })
+      dispatch({ type: 'REGISTER_ERROR', err })
     })
   }
 }
