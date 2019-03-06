@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import WelcomeMsg from '../components/welcomeMsg';
+import Navbar from '../components/navbar'
 
 class Home extends Component {
   render() {
-    const { profile } = this.props
+    const { auth, profile } = this.props
+    const msg = auth.uid ? <WelcomeMsg profile={profile} /> : <p>Login first!</p>
     return (
-      <div className="container">
-        <h1 className="center">Welcome {profile.firstName}!</h1>
-      </div>
+      <React.Fragment>
+        <Navbar />
+        <div className="container">
+          {msg}
+        </div>
+      </React.Fragment>
     )
   }
 }

@@ -1,9 +1,10 @@
 {
-  "name": "react-redux-firebase-starter",
+  "name": "react-ecommerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "firebase": "^5.8.2",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-firebase-file-uploader": "^2.4.2",
