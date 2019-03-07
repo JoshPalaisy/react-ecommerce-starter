@@ -4,6 +4,7 @@ import Login from '../containers/login'
 import Register from '../containers/register'
 import Home from '../containers/home'
 import SideNav from '../components/sidenav'
+import AddSlider from '../containers/addSlider'
 
 class Routes extends Component {
   render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/create-account' component={Register} />
+            <Route exact path='/add-slide' component={AddSlider} />
           </Switch>
           <SideNav />
         </React.Fragment>

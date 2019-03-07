@@ -10,7 +10,7 @@ export default function withAuth(ComponentToBeRendered){
       }
     }
     componentWillUpdate(){
-      if (!this.props.isAuthenticated === false) {
+      if (!this.props.authError === null) {
         this.props.history.push('/signin')
       }
     }
@@ -20,7 +20,7 @@ export default function withAuth(ComponentToBeRendered){
   }
   function mapStateToProps(state) {
     return {
-      isAuthenticated: state.currentUser.isAuthenticated
+      authError: state.authError
     }
   }
 
