@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from '../containers/login'
 import Register from '../containers/register'
 import Home from '../containers/home'
-import SideNav from '../components/sidenav'
+import Sidenav from '../components/sidenav'
 import AddSlider from '../containers/addSlider'
 
 class Routes extends Component {
@@ -17,7 +17,7 @@ class Routes extends Component {
             <Route exact path='/create-account' component={Register} />
             <Route exact path='/add-slide' component={AddSlider} />
           </Switch>
-          <SideNav />
+          <Sidenav />
         </React.Fragment>
       </Router>
     )

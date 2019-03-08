@@ -4,9 +4,13 @@ import NavMenu from './navMenu'
 import Logo from '../images/logo.svg'
 import '../styles/navbar.css'
 
-const Navbar = (props) => {
+const Nav = (props) => {
   const { auth } = props
   return (
+    // <Navbar brand='logo' right>
+    //   <NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>
+    //   <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
+    // </Navbar>
     <nav>
       <div className="nav-wrapper">
         <Link to="/" className="brand-logo"><img src={Logo} className="App-logo responsive-img" alt="Logo" /></Link>
@@ -19,4 +23,4 @@ const Navbar = (props) => {
   )  
 }
 
-export default Navbar
+export default Nav

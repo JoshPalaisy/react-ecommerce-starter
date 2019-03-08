@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom'
 import FileUploader from 'react-firebase-file-uploader'
 import firebase from 'firebase'
 import Navbar from '../components/navbar'
-import M from 'materialize-css'
 
 class AddSlider extends Component {
   state = {
@@ -19,7 +18,7 @@ class AddSlider extends Component {
   }
 
   componentDidMount() {
-    M.AutoInit()
+
   }
 
   handleUploadStart = () => {
