@@ -2,34 +2,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import WelcomeMsg from '../components/welcomeMsg';
 import Nav from '../components/navbar'
-import StaticSlider from '../components/staticSlider'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import Footer from '../components/footer'
-import M from 'materialize-css'
+import Slider from '../components/slider'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 class Home extends Component {
-  componentDidMount() {
-    let selects = document.querySelectorAll('.carousel')
-
-    let options = {
-      fullWidth: true,
-      indicators: true
-    }
-    
-    M.Carousel.init(selects, options)
-  }
 
   render() {
     const { auth, profile, slideshow } = this.props
     const msg = auth.uid ? <WelcomeMsg profile={profile} /> : <p>Login first!</p>
-    // const sld = slideshow ? <div className="carousel carousel-slider"><SliderList slideshow={slideshow} /></div> : <p>Loading...</p>
+    const sld = slideshow ? <Slider slideshow={slideshow} /> : <p>Loading...</p>
     return (
       <React.Fragment>
         <Nav />
-        <StaticSlider />
-        <div className="container center">
-          { msg }
+        <div>
+          {sld}
         </div>
         <div className="container center">
           {msg}

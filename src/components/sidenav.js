@@ -17,13 +17,13 @@ class Sidenav extends Component {
   render(){
     return (
       <ul className="sidenav" id="mobile-demo">
-        <li><div class="user-view">
-          <div class="background">
+        <li><div className="user-view">
+          <div className="background">
             <img src={bgImg} alt="bg" />
           </div>
-                <a href="#user"><img class="circle" src={profilePic} alt="profile" /></a>
-                  <a href="#name"><span class="white-text name">John Doe</span></a>
-                  <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                <a href="#user"><img className="circle" src={profilePic} alt="profile" /></a>
+                  <a href="#name"><span className="white-text name">John Doe</span></a>
+                  <a href="#email"><span className="white-text email">jdandturk@gmail.com</span></a>
           </div>
         </li>
         <NavItem href='/'><Icon>home</Icon>Home</NavItem>

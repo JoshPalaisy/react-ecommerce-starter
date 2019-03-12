@@ -1,4 +1,12 @@
-.carousel-slider {
+.slider-bg{
   height: 500px !important;
   max-height: 500px !important;
+  min-height: 500px !important;
+  margin: auto !important;
+}
+
+.carousel .slide div {
+  width: 100%;
+  vertical-align: bottom !important;
+  border: 0;
 }
